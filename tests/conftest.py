@@ -1,7 +1,7 @@
 import pytest
 from selene import browser
 from selenium import webdriver
-
+from utils import attach
 
 @pytest.fixture(scope='function', autouse=True)
 def driver_management():
@@ -13,5 +13,9 @@ def driver_management():
     browser.config.window_height = 1080
 
     yield
+    attach.add_html(browser)
+    attach.add_logs(browser)
+    attach.add_screenshot(browser)
+    attach.add_video(browser)
 
     browser.quit()
