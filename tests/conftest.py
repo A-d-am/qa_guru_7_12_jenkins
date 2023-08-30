@@ -11,7 +11,7 @@ def setup_browser(request):
     browser_version = "100.0"
     options = Options()
     selenoid_capabilities = {
-        "browserName": "chrome",
+        "browserName": "firefox",
         "browserVersion": browser_version,
         "selenoid:options": {
             "enableVNC": True,
