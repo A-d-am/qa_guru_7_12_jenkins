@@ -1,7 +1,5 @@
-import os
-
 import pytest
-
+import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selene import Browser, Config
@@ -26,7 +24,7 @@ def setup_browser(request):
         options=options
     )
 
-    browser = Browser(Config(driver))
+    browser = Browser(Config())
     yield browser
 
     attach.add_screenshot(browser)
@@ -42,4 +40,3 @@ CURRENT_FILE_PATH = os.path.abspath(__file__)
 PROJECT_ROOT_PATH = os.path.dirname(CURRENT_FILE_PATH)
 TESTS_ROOT_PATH = os.path.join(PROJECT_ROOT_PATH, 'tests')
 RESOURCES_DIR = os.path.join(TESTS_ROOT_PATH, 'resources')
-
