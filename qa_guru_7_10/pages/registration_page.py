@@ -10,7 +10,7 @@ class RegistrationPage:
 
     def open(self):
         with allure.step('Открываем регистрационную форму'):
-            browser.open('/automation-practice-form')
+            browser.open('https://demoqa.com/automation-practice-form')
 
     def type_first_name(self, value):
         with allure.step(f'Вводим {value} в поле First Name'):
