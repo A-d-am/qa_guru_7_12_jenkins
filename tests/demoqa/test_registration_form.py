@@ -1,6 +1,7 @@
-from qa_guru_7_10.pages.registration_page import RegistrationPage
+import allure
+from qa_guru_7_12_jenkins.pages.registration_page import RegistrationPage
 import pytest
-from qa_guru_7_10.models.users import User
+from qa_guru_7_12_jenkins.models.users import User
 
 
 @pytest.fixture()
@@ -24,8 +25,9 @@ def user_to_test():
     return user_to_test
 
 
-def test_fill_and_send_form(user_to_test):
-    registration_page = RegistrationPage()
+@allure.title("Successful fill form")
+def test_successful(setup_browser, user_to_test):
+    registration_page = RegistrationPage(setup_browser)
     registration_page.open()
 
     # Name
