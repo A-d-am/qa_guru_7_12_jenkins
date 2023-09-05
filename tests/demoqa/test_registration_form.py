@@ -27,7 +27,7 @@ def user_to_test():
 
 @allure.title("Successful fill form")
 def test_successful(setup_browser, user_to_test):
-    registration_page = RegistrationPage(setup_browser)
+    registration_page = RegistrationPage()
     registration_page.open()
 
     # Name
